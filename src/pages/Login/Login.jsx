@@ -75,24 +75,19 @@ export default function SignIn(props) {
   }
     
 
-  const onGooglePopUp=()=>{
+ const onGooglePopUp = () => {
     signInWithPopup(auth, provider)
-    .then((result) => {
-
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-
-      const user = result.user;
-      if(user){
-        navigate("/")
-      }
-    })
-    .catch((error) => {
-      // Handle errors during sign-in
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
-  }
+      .then((result) => {
+        const user = result.user;
+        if (user) {
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setErr(errorMessage);
+      });
+  };
 
   const switchLogin=()=>{
     setButtonState(!buttonState)
