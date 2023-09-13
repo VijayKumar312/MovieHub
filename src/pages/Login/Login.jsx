@@ -171,11 +171,11 @@ export default function SignIn(props) {
             
             <Typography style={{color: 'red', fontSize: '12px', marginBottom: '9px'}}>{errMsg}</Typography>
             <Grid container>
-              {buttonState && (<Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>)}
+              {buttonState && (
+                <Button onClick={onGooglePopUp} style={{fontSize:'10px'}}>
+                  Login With Google
+                </Button>
+              )}
               <Grid item>
                 {buttonState && (
                     <Button onClick={switchLogin} style={{fontSize: '10px'}}>
