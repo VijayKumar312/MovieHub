@@ -58,7 +58,7 @@ function App() {
   <Routes>
     <Route path="/login" element={<SignIn />} />
     <Route
-      path="/"
+      exact path="/"
       element={
         <>
           <Header />
