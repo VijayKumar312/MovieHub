@@ -55,21 +55,39 @@ function App() {
 
 return (
   <BrowserRouter>
-    {window.location.pathname === "/login" ? (
-      <Route path="/login" element={<SignIn />} />
-    ) : (
-      <>
-        <Header />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/:mediaType/:id" element={<Details />} />
-          <Route path="/search/:query" element={<SearchResult />} />
-          <Route path="/explore/:mediaType" element={<Explore />} />
+      <Routes>
+          <Route path="/login" element={<SignIn />} />
+          <Route exact path="/" element={
+              <>
+                  <Header />
+                  <Home />
+                  <Footer />
+              </>
+              } />
+          <Route path="/:mediaType/:id" element={
+              <>
+                  <Header />
+                  <Details />
+                  <Footer />
+              </>
+          } 
+        />
+          <Route path="/search/:query" element={
+          <>
+              <Header />
+              <SearchResult />
+              <Footer />
+          </>
+          } />
+          <Route path="/explore/:mediaType" element={
+            <>
+              <Header />
+              <Explore />
+              <Footer />
+            </>
+          } />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        <Footer />
-      </>
-    )}
   </BrowserRouter>
 );
 }
