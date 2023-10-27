@@ -58,15 +58,17 @@ function App() {
     if(window.location.pathname=="/login"){
         <Route path="/login" element={<SignIn />} />
     }else{
-    <Header />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/:mediaType/:id" element={<Details />} />
-        <Route path="/search/:query" element={<SearchResult />} />
-        <Route path="/explore/:mediaType" element={<Explore />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    <Footer />
+        <>
+        <Header />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/:mediaType/:id" element={<Details />} />
+            <Route path="/search/:query" element={<SearchResult />} />
+            <Route path="/explore/:mediaType" element={<Explore />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        <Footer />
+        </>
     }
 </BrowserRouter>
 
