@@ -53,26 +53,25 @@ function App() {
         dispatch(getGenres(allGenres));
     };
 
-    return (
-<BrowserRouter>
-    {
-        window.location.pathname==="/login" ? (<Route path="/login" element={<SignIn />} />) : (
-            <>
-                <Header />
-                  <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route path="/:mediaType/:id" element={<Details />} />
-                    <Route path="/search/:query" element={<SearchResult />} />
-                    <Route path="/explore/:mediaType" element={<Explore />} />
-                    <Route path="*" element={<PageNotFound />} />
-                  </Routes>
-                <Footer />
-            </>
-        )
-    }
-</BrowserRouter>
-
-    );
+return (
+  <BrowserRouter>
+    {window.location.pathname === "/login" ? (
+      <Route path="/login" element={<SignIn />} />
+    ) : (
+      <>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/:mediaType/:id" element={<Details />} />
+          <Route path="/search/:query" element={<SearchResult />} />
+          <Route path="/explore/:mediaType" element={<Explore />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+        <Footer />
+      </>
+    )}
+  </BrowserRouter>
+);
 }
 
 export default App;
