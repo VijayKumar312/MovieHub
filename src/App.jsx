@@ -56,7 +56,7 @@ function App() {
     return (
 <BrowserRouter>
     {
-        window.location.pathname=="/login" ? <Route path="/login" element={<SignIn />} /> : (
+        window.location.pathname==="/login" ? (<Route path="/login" element={<SignIn />} />) : (
             <>
                 <Header />
                   <Routes>
